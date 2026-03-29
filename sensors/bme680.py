@@ -11,11 +11,11 @@ class BME680Sensor:
         """Initialise a BME680Sensor object.
 
         Args:
-            scl (): SCL pin.
-            sda (): SDA pin.
+            scl (Pin): SCL pin.
+            sda (Pin): SDA pin.
             temperature_offset (float, optional): Optional offset for
                 temperature reading, determined upon calibration.
-            address (hex): Address of the device.
+            address (int): Address of the device.
         """
         bme260_i2c = busio.I2C(scl, sda)
         bme680 = adafruit_bme680.Adafruit_BME680_I2C(
@@ -31,7 +31,7 @@ class BME680Sensor:
         """Measured temperature.
 
         Returns:
-            Temperature in degrees Celsius.
+            float: Temperature in degrees Celsius.
         """
         return self._sensor.temperature + self._temperature_offset
 
@@ -39,7 +39,7 @@ class BME680Sensor:
         """Measured air quality.
 
         Returns:
-            Gas resistance in Ohms.
+            float: Gas resistance in Ohms.
         """
         return self._sensor.gas
 
@@ -47,7 +47,7 @@ class BME680Sensor:
         """Measured relative humidity.
 
         Returns:
-            Relative humidity percentage.
+            float: Relative humidity percentage.
         """
         return self._sensor.relative_humidity
 
@@ -55,7 +55,7 @@ class BME680Sensor:
         """Measured pressure.
 
         Returns:
-            Air pressure in hectopascals.
+            float: Air pressure in hectopascals.
         """
         return self._sensor.pressure
 
@@ -63,6 +63,6 @@ class BME680Sensor:
         """Measured altitude.
 
         Returns:
-            Altitude in metres.
+            float: Altitude in metres.
         """
         return self._sensor.altitude
