@@ -33,7 +33,7 @@ def _disconnect(client, userdata, rc):
 
 
 def _publish(client, userdata, topic, pid):
-    """Callback upon disconnection from MQTT broker.
+    """Callback upon publishing to MQTT broker.
 
     Args:
         client (MQTT): The MQTT instance for this callback.
