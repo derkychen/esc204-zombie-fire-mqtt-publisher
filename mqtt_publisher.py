@@ -69,7 +69,7 @@ class MQTTPublisher:
         self._mqtt_client.on_disconnect = _disconnect
         self._mqtt_client.on_publish = _publish
 
-    def connnect(self):
+    def connect(self):
         """Connect to MQTT broker."""
         self._mqtt_client.connect()
 

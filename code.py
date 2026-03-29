@@ -20,6 +20,7 @@ try:
 
     # Initialise MQTT topic
     mqtt_publisher = MQTTPublisher(pool, ssl_context)
+    mqtt_publisher.connect()
 
     # Publish a number of data bursts, then enter deep sleep
     for _ in range(GranularityConfig.NUM_BURSTS):
