@@ -1,0 +1,10 @@
+WIFI_SSID = "mywifinetwork"
+WIFI_PASSWORD = "mysupersecretpassword"
+
+DEVICE_ID = "peatland1west"
+
+MQTT_BROKER = "broker-url.com"
+MQTT_PORT = 8883
+MQTT_TOPIC = "topic"
+MQTT_USERNAME = "username"
+MQTT_PASSWORD = "password"

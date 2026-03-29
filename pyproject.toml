@@ -1,0 +1,36 @@
+[project]
+name = "esc204-zombie-fire-mqtt-publisher"
+version = "0.1.0"
+description = "MQTT publisher on Pico W for ESC204 IoT zombie fire monitoring."
+readme = "README.md"
+authors = [
+  { name = "Derek Chen", email = "derekj.chen@mail.utoronto.ca" },
+]
+dependencies = [
+  "adafruit-circuitpython-adafruitio",
+  "adafruit-circuitpython-bme680",
+  "adafruit-circuitpython-busdevice",
+  "adafruit-circuitpython-connectionmanager",
+  "adafruit-circuitpython-minimqtt",
+  "adafruit-circuitpython-ntp",
+  "adafruit-circuitpython-register",
+  "adafruit-circuitpython-ticks",
+]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.setuptools]
+packages = ["sensors"]
+py-modules = [
+  "config",
+  "connection",
+  "mqtt_publisher",
+  "utils",
+]
