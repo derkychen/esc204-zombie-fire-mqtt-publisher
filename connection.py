@@ -11,7 +11,13 @@ from config import WifiConfig
 
 
 def _attempt_connection():
-    """Attempt to connect to Wi-Fi. Synchronise onboard RTC."""
+    """Attempt to connect to Wi-Fi. Synchronise onboard RTC.
+
+    Returns:
+        tuple: A tuple containing
+            - SocketPool: Pool of socket resources.
+            - SSLContext: SSL certificates and configurations.
+    """
     try:
         wifi.radio.connect(WifiConfig.SSID, WifiConfig.PASSWORD)
 

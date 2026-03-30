@@ -16,7 +16,6 @@ def _connect(client, userdata, flags, rc):
         userdata (Any): Private user-defined data.
         flags (dict): Message flags (QoS, retain, etc.).
         rc (int): Success if zero, failure if non-zero.
-
     """
     print("Connected to MQTT Broker.")
 
@@ -40,7 +39,6 @@ def _publish(client, userdata, topic, pid):
         userdata (Any): Private user-defined data.
         topic (str): The topic the client published to.
         pid (int): Packet identifier.
-
     """
     print(f"Published to {topic}.")
 
