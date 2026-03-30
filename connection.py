@@ -49,12 +49,12 @@ def connect_to_wifi(max_attempts=None):
         max_attempts (int, optional): The maximum number of attempts before
             giving up.
     """
-    attempt = 1
-    while max_attempts is None or attempt <= max_attempts:
+    attempts = 1
+    while max_attempts is None or attempts <= max_attempts:
         pool, ssl_context = _attempt_connection()
 
         if pool and ssl_context:
             return pool, ssl_context
 
-        attempt += 1
+        attempts += 1
         time.sleep(10)
